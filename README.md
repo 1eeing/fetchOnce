@@ -1,5 +1,6 @@
 # fetchOnce
-首屏请求前端解决方案
+高阶函数，将其包裹一个返回promise的请求函数，无论该包裹函数调用几次，都确保只真正请求一次。<br>
+支持将请求结果存储到 `内存`、`localStorage`、`sessionStorage` 中。
 
 
 ## 安装

@@ -1,17 +1,17 @@
 # fetchOnce
-高阶函数，将其包裹一个返回promise的请求函数，无论该包裹函数调用几次，都确保只真正请求一次。<br>
+高阶函数，将其包裹一个返回 `promise` 的请求函数，无论该包裹函数调用几次，都确保只真正请求一次。<br>
 支持将请求结果存储到 `内存`、`localStorage`、`sessionStorage` 中。
 
 
 ## 安装
 ```bash
-npm install fetchOnce --save
+npm install @1eeing/fetchOnce --save
 ```
 
 
 ## 如何使用
 ```js
-import fetchOnce from 'fetchOnce'
+import fetchOnce from '@1eeing/fetchOnce'
 
 const getUserInfo = () => {
   return fetch('test.com');
@@ -26,7 +26,7 @@ getUserInfoFetchOnce().then(res => {
 
 如果需要存储到sessionStorage中
 ```js
-import fetchOnce from 'fetchOnce'
+import fetchOnce from '@1eeing/fetchOnce'
 
 const getUserInfo = () => {
   return fetch('test.com');

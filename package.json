@@ -1,6 +1,6 @@
 {
   "name": "@1eeing/fetchonce",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Only fetch once.",
   "main": "dist/index.js",
   "module": "dist/index.js",

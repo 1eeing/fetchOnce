@@ -24,6 +24,24 @@ getUserInfoFetchOnce().then(res => {
 })
 ```
 
+如果需要存储到sessionStorage中
+```js
+import fetchOnce from 'fetchOnce'
+
+const getUserInfo = () => {
+  return fetch('test.com');
+};
+
+const getUserInfoFetchOnce = fetchOnce(getUserInfo, {
+  type: 'session',
+  key: 'userInfo'
+});
+
+getUserInfoFetchOnce().then(res => {
+  console.log(res);
+})
+```
+
 
 ## 参数说明
 ### fn

@@ -1,0 +1,28 @@
+{
+  "name": "fetchonce",
+  "version": "0.0.1",
+  "description": "首屏请求前端解决方案",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "fetchOnce",
+    "fetch-once"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1eeing/fetchOnce.git"
+  },
+  "author": "1eeing <372711472@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1eeing/fetchOnce/issues"
+  },
+  "homepage": "https://github.com/1eeing/fetchOnce#readme"
+}

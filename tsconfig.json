@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "target": "ESNext",
+    "declaration": true,
+    "declarationDir": "dist",
+    "outDir": "dist",
+  },
+  "include": [
+    "index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+  ]
+}

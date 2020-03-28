@@ -66,36 +66,34 @@ const fetchOnce = (fn: (...args: any) => Promise<any>, opt: Opt = { type: 'memor
   let lock = false;
 
   return function (...args: any) {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       if (result) {
         return resolve(result);
       }
       fnQueue.push(fn);
       promiseQueue.push({ resolve, reject });
-      while (fnQueue.length && !lock) {
-        lock = true;
-        const _fn = fnQueue.shift();
-
-        // 当一个请求成功，全部都成功
-        // 当全部请求失败，才算失败
-        _fn.apply(this, args)
-          .then((res: any) => {
-            fnQueue.length = 0;
-            errors.length = 0;
-            dispatch(true, res);
-            result = res;
-            saveRes(key, res);
-          })
-          .catch((error: any) => {
-            errors.push(error);
-          })
-          .finally(() => {
-            lock = false;
-          });
+      if(lock){
+        return;
       }
-      if (errors.length) {
-        dispatch(false, errors);
-        errors.length = 0;
+      lock = true;
+      for(let _fn of fnQueue){
+        try {
+          const res = await _fn.apply(this, args);
+          fnQueue.length = 0;
+          errors.length = 0;
+          dispatch(true, res);
+          result = res;
+          saveRes(key, res);
+          lock = false;
+          break;
+        } catch (error) {
+          errors.push(error);
+          if(errors.length && errors.length === promiseQueue.length){
+            dispatch(false, errors);
+            errors.length = 0;
+            lock = false;
+          }
+        }
       }
     })
   }

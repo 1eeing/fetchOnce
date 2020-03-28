@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "module": "UMD",
     "lib": [
       "DOM",
       "ESNext"

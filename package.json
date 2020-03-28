@@ -1,12 +1,13 @@
 {
   "name": "@1eeing/fetchonce",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Only fetch once.",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "npx tsc"
+    "build": "npx tsc",
+    "test": "mocha --require ts-node/register"
   },
   "files": [
     "dist"
@@ -27,5 +28,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/1eeing/fetchOnce#readme"
+  "homepage": "https://github.com/1eeing/fetchOnce#readme",
+  "devDependencies": {
+    "mocha": "^7.1.1",
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3"
+  }
 }

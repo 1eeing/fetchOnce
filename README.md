@@ -5,13 +5,13 @@
 
 ## 安装
 ```bash
-npm install @1eeing/fetchOnce --save
+npm install @1eeing/fetchonce --save
 ```
 
 
 ## 如何使用
 ```js
-import fetchOnce from '@1eeing/fetchOnce'
+import fetchOnce from '@1eeing/fetchonce'
 
 const getUserInfo = () => {
   return fetch('test.com');
@@ -26,7 +26,7 @@ getUserInfoFetchOnce().then(res => {
 
 如果需要存储到sessionStorage中
 ```js
-import fetchOnce from '@1eeing/fetchOnce'
+import fetchOnce from '@1eeing/fetchonce'
 
 const getUserInfo = () => {
   return fetch('test.com');

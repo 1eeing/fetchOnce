@@ -1,6 +1,7 @@
 # fetchOnce
 高阶函数，将其包裹一个返回 `promise` 的请求函数，无论该包裹函数调用几次，都确保只真正请求一次。<br>
-支持将请求结果存储到 `内存`、`localStorage`、`sessionStorage` 中。
+支持将请求结果存储到 `内存`、`localStorage`、`sessionStorage` 中。<br>
+> 错误重试机制：如果一批请求中，有一个成功了，则所有的请求都成功；只有全部失败了，请求才算失败。
 
 
 ## 安装

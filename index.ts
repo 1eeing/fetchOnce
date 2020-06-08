@@ -89,7 +89,7 @@ const fetchOnce = (fn: (...args: any) => Promise<any>, opt: Opt = { type: 'memor
         } catch (error) {
           errors.push(error);
           if(errors.length && errors.length === promiseQueue.length){
-            dispatch(false, errors);
+            dispatch(false, [...errors]);
             errors.length = 0;
             lock = false;
           }
